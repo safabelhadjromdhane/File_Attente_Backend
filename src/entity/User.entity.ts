@@ -14,27 +14,27 @@ export type roleType = "admin" | "client" | "operateur";
 @Entity({name : "user"})
 export class User {
 
-    @PrimaryColumn()
+    @PrimaryColumn({type : "text"})
     id: string
 
-    @Column()
+    @Column({type : "text"})
     nom: string;
 
-    @Column()
+    @Column({type : "text"})
     prenom: string;
 
-    @Column()
+    @Column({type : "text"})
     @IsEmail()
     email: string;
 
-    @Column()
+    @Column({type : "int"})
     @Length(8)
     telephone : number
 
-    @Column({ nullable: false })
+    @Column({ nullable: false , type : "varchar"})
     password: string;
   
-    @Column()
+    @Column({type : "text"})
     role: string ;
     
     @OneToMany(() => Product, (product) => product.user)

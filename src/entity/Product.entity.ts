@@ -6,14 +6,14 @@ import { Length } from "class-validator";
   @Entity({ name: "produit" })
   export class Product {
 
-    @PrimaryColumn()
+    @PrimaryColumn({type : "text"})
     // @Length(1, 99999)
     codeProd: string;
   
-    @Column()
+    @Column({type : "varchar"})
     libProd: string;
 
-    @Column()
+    @Column( {type: "int"})
     quantite:number
 
     @ManyToOne(()=> User, (user) => (user.products))

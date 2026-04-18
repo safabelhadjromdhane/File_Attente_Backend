@@ -8,16 +8,18 @@ import { User } from "./User.entity";
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column()
+    @Column({type :"varchar"})
     email: string;
     
-    @Column({ name: "avis"})
+    @Column({ type: "text"
+    //  , name: "avis"
+    })
     avis : string
 
     @ManyToOne(()=> User, (user) => (user.feedbacks))
     user: User
 
-    @Column({nullable:true})
+    @Column({nullable:true, type : "text"})
     sentiment:string
     // @Column({type: 'date', name:"dateCreation"})
     // dateCreation:Date ;

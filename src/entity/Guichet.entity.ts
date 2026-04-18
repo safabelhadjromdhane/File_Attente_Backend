@@ -17,7 +17,7 @@ import { Ticket } from "./Ticket.entity";
     id: string;
 
     // Nom Guichet
-    @Column()
+    @Column({ type: "text"})
     nomGuichet:string;
 
     // OP

@@ -13,13 +13,13 @@ export class File {
     @Length(1, 3)
     id:string;
 
-    @Column()
+    @Column({ type: 'text'})
     nom: string;
 
     // @Column({default:1})
     // nbrClientSuivant: number;
 
-    @Column()
+    @Column({ type: "varchar"})
     idUser:string;
     // YYYY-MM-DD
     @CreateDateColumn()
@@ -35,7 +35,7 @@ export class File {
     //  @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
     // timestampField: Date;
 
-    @Column()
+    @Column({type: "varchar"})
     idGuichet:string;
     // @Column({default:0, type: "bigint" })
     // numCurrent:number;

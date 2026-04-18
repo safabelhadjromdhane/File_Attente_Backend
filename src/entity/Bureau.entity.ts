@@ -11,7 +11,7 @@ import { Length } from "class-validator";
     @Length(1,3)
     id: number;
 
-    @Column()
+    @Column({type : "text"})
     localisation: string;
   
     @ManyToOne(()=> User, (user) => (user.bureaux))
